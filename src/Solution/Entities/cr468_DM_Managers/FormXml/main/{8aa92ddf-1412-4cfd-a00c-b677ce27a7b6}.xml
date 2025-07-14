@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{8aa92ddf-1412-4cfd-a00c-b677ce27a7b6}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{b1358927-9569-4f30-b1f8-0a0a1bec8062}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{9ae693b5-13f1-42ad-8d46-2b25d2be82f2}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{38573ce7-6645-47c1-a440-25c871c60d96}">
+                        <labels>
+                          <label description="Manager Name" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_newcolumn" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr468_newcolumn" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{95160457-fd8f-4607-a857-b7a5bfd2df34}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{94438fdd-abc2-42a6-87d3-ade6e95d3b0c}">
+                        <labels>
+                          <label description="ManagerStatus" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_managerstatus" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="cr468_managerstatus" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

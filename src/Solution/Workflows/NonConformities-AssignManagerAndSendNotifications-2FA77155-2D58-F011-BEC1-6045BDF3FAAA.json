@@ -1,0 +1,374 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr468_sharedcommondataserviceforapps_66b08"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr468_sharedoffice365_60dc9"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_": {
+          "metadata": {
+            "operationMetadataId": "7ae8747d-8cb0-44d5-802b-a4168eac4b19"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "cr468_dm_nonconformities",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "cr468_title, cr468_type, cr468_description"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Switch_-_type_of_trigger": {
+          "runAfter": {
+            "List_rows_-_responsible_manager": [
+              "Succeeded"
+            ]
+          },
+          "cases": {
+            "Case_-_new_item": {
+              "case": "Create",
+              "actions": {
+                "Compose_-_manager_row_id": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "c96f1be5-f39d-4c60-94f5-d6915cfbd023"
+                  },
+                  "type": "Compose",
+                  "inputs": "@first(outputs('List_rows_-_responsible_manager')?['body/value'])?['cr468_dm_managersid']"
+                },
+                "Update_a_row": {
+                  "runAfter": {
+                    "Compose_-_manager_row_id": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "88840bc4-ffd4-4c92-bb3f-c7b7d5acb8e8"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "UpdateOnlyRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "cr468_dm_nonconformitieses",
+                      "recordId": "@triggerOutputs()?['body/cr468_dm_nonconformitiesid']",
+                      "item/cr468_AssignedManager@odata.bind": "cr468_dm_managerses/@{outputs('Compose_-_manager_row_id')}"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Scope_-_send_notificatoin_to_assigned_manager": {
+                  "actions": {
+                    "Compose_-_Title_email": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "6a42fea3-3d02-4c06-841f-94cc50ebf62e"
+                      },
+                      "type": "Compose",
+                      "inputs": "New Nonconformity Created -  @{triggerOutputs()?['body/cr468_title']}"
+                    },
+                    "Compose_-_Paragraph_Email": {
+                      "runAfter": {
+                        "Compose_-_manager_name": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "76210c43-e0b0-42d6-9941-bdaf3ec05653"
+                      },
+                      "type": "Compose",
+                      "inputs": "Dear @{outputs('Compose_-_manager_name')}, \nwe would like to inform you that there has been a new Discrepancy record created with the title @{triggerOutputs()?['body/cr468_title']}.\nClick at the button below to open the Discrepancy Management App."
+                    },
+                    "Compose_-_manager_email": {
+                      "runAfter": {
+                        "Compose_-_Title_email": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "41268daf-1a41-4edd-a958-cc108e2ba6ae"
+                      },
+                      "type": "Compose",
+                      "inputs": "@first(outputs('List_rows_-_responsible_manager')?['body/value'])?['cr468_manageremail']"
+                    },
+                    "Compose_-_manager_name": {
+                      "runAfter": {
+                        "Compose_-_manager_email": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "36ed12f5-6aa4-4628-98a6-bfa040ee2462"
+                      },
+                      "type": "Compose",
+                      "inputs": "@first(outputs('List_rows_-_responsible_manager')?['body/value'])?['cr468_assignedmanagername']"
+                    },
+                    "Compose_-_button_title": {
+                      "runAfter": {
+                        "Compose_-_Paragraph_Email": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "e76f0293-7d08-4ab1-b8d3-096155e60669"
+                      },
+                      "type": "Compose",
+                      "inputs": "Open Application"
+                    },
+                    "Compose_-_URL": {
+                      "runAfter": {
+                        "Compose_-_button_title": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "52cf1569-7b92-4338-b001-f2574f9ea346"
+                      },
+                      "type": "Compose",
+                      "inputs": "https://org250e4bf3.crm4.dynamics.com/main.aspx?appid=868e1665-3a54-f011-877b-6045bdf3faaa&pagetype=entitylist&etn=cr468_dm_nonconformities&viewid=83199687-0f58-469a-ad00-43943849c511&viewType=1039"
+                    },
+                    "Compose_-_Email_Body": {
+                      "runAfter": {
+                        "Compose_-_URL": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "6a7eef45-a2ec-4890-9ff9-ce040a77f47f"
+                      },
+                      "type": "Compose",
+                      "inputs": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" style=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; color: #4B4B4B;\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>Actionable emails e.g. reset password</title>\n\n<style type=\"text/css\">\nimg {\nmax-width: 100%;\n}\nbody {\n-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6em; color: #4B4B4B;\n}\nbody {\nbackground-color: #f6f6f6;\n}\n@media only screen and (max-width: 640px) {\n  body {\n    padding: 0 !important;\n  }\n  h1, h2, h3, h4 {\n    font-weight: 800 !important; margin: 20px 0 5px !important;\n  }\n  h1 {\n    font-size: 22px !important;\n  }\n  h2 {\n    font-size: 18px !important;\n  }\n  h3 {\n    font-size: 16px !important;\n  }\n  .container {\n    padding: 0 !important; width: 100% !important;\n  }\n  .content {\n    padding: 0 !important;\n  }\n  .content-wrap {\n    padding: 10px !important;\n  }\n  .invoice {\n    width: 100% !important;\n  }\n}\n</style>\n</head>\n\n<body itemscope itemtype=\"http://schema.org/EmailMessage\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6em; background-color: #f6f6f6; margin: 0; color: #4B4B4B;\" bgcolor=\"#f6f6f6\">\n\n<table class=\"body-wrap\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; background-color: #f6f6f6; margin: 0; color: #4B4B4B;\" bgcolor=\"#f6f6f6\">\n<tr><td></td>\n<td class=\"container\" width=\"600\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto; color: #4B4B4B;\">\n<div class=\"content\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; max-width: 600px; display: block; margin: 0 auto; padding: 20px; color: #4B4B4B;\">\n<table class=\"main\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-radius: 3px; background-color: #fff; margin: 0; border: 1px solid #e9e9e9; color: #4B4B4B;\" bgcolor=\"#fff\">\n<tr><td class=\"content-wrap\" style=\"padding: 20px; color: #4B4B4B;\">\n<meta itemprop=\"name\" content=\"Confirm Email\" />\n<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td class=\"content-block\" style=\"padding: 0 0 20px; color: #4B4B4B;\">\n<h4>@{outputs('Compose_-_Title_email')} </h4>\n</td></tr>\n<tr><td class=\"content-block\" style=\"padding: 0 0 20px; color: #4B4B4B;\">\n@{outputs('Compose_-_Paragraph_Email')}\n</td></tr>\n<tr><td class=\"content-block\" itemprop=\"handler\" itemscope itemtype=\"http://schema.org/HttpActionHandler\" style=\"padding: 0 0 20px; color: #4B4B4B;\">\n<a href=\"@{outputs('Compose_-_URL')}\" class=\"btn-primary\" itemprop=\"url\" style=\"color: #FFF; text-decoration: none; line-height: 2em; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 5px; text-transform: capitalize; background-color: #4B4B4B; margin: 0; border-color: #4B4B4B; border-style: solid; border-width: 10px 20px;\">@{outputs('Compose_-_button_title')}</a>\n</td></tr>\n<tr><td class=\"content-block\" style=\"padding: 0 0 20px; color: #4B4B4B;\"></td></tr>\n</table>\n</td></tr>\n</table>\n<div class=\"footer\" style=\"width: 100%; clear: both; color: #999; margin: 0; padding: 20px;\">\n<table width=\"100%\">\n<tr><td class=\"aligncenter content-block\" style=\"font-size: 12px; color: #999; text-align: center; padding: 0 0 20px;\">\nThis is an automatically generated email sent via Power Automate. Please do not reply.\n</td></tr>\n</table>\n</div>\n</div>\n</td>\n<td></td>\n</tr>\n</table>\n</body>\n</html>\n"
+                    },
+                    "Send_an_email_(V2)": {
+                      "runAfter": {
+                        "Compose_-_Email_Body": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "0c321939-11c3-4f7c-80ed-aaa25ec59619"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_office365",
+                          "operationId": "SendEmailV2",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                        },
+                        "parameters": {
+                          "emailMessage/To": "@outputs('Compose_-_manager_email')",
+                          "emailMessage/Subject": "New Nonconformity Created - @{outputs('Update_a_row')?['body/cr468_title']} ",
+                          "emailMessage/Body": "<p>@{outputs('Compose_-_Email_Body')}</p>",
+                          "emailMessage/Importance": "Normal"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Update_a_row": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "8c62006c-ac92-48f4-a283-384eba971743"
+                  },
+                  "type": "Scope"
+                }
+              }
+            },
+            "Case_-_Modified": {
+              "case": "Update",
+              "actions": {
+                "Scope_-_send_notificatoin_to_assigned_manager_2": {
+                  "actions": {
+                    "Compose_-_Title_email_2": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "6a42fea3-3d02-4c06-841f-94cc50ebf62e"
+                      },
+                      "type": "Compose",
+                      "inputs": "Nonconformity Updated - @{triggerOutputs()?['body/cr468_title']} "
+                    },
+                    "Compose_-_Paragraph_Email_2": {
+                      "runAfter": {
+                        "Compose_-_manager_name_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "76210c43-e0b0-42d6-9941-bdaf3ec05653"
+                      },
+                      "type": "Compose",
+                      "inputs": "Dear @{outputs('Compose_-_manager_name_2')}, \nwe would like to inform you that there has been a change in Discrepancy record with the title @{triggerOutputs()?['body/cr468_title']}.\nClick at the button below to open the Discrepancy Management App."
+                    },
+                    "Compose_-_manager_email_2": {
+                      "runAfter": {
+                        "Compose_-_Title_email_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "41268daf-1a41-4edd-a958-cc108e2ba6ae"
+                      },
+                      "type": "Compose",
+                      "inputs": "@first(outputs('List_rows_-_responsible_manager')?['body/value'])?['cr468_manageremail']"
+                    },
+                    "Compose_-_manager_name_2": {
+                      "runAfter": {
+                        "Compose_-_manager_email_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "36ed12f5-6aa4-4628-98a6-bfa040ee2462"
+                      },
+                      "type": "Compose",
+                      "inputs": "@first(outputs('List_rows_-_responsible_manager')?['body/value'])?['cr468_assignedmanagername']"
+                    },
+                    "Compose_-_button_title_2": {
+                      "runAfter": {
+                        "Compose_-_Paragraph_Email_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "e76f0293-7d08-4ab1-b8d3-096155e60669"
+                      },
+                      "type": "Compose",
+                      "inputs": "Open Application"
+                    },
+                    "Compose_-_URL_2": {
+                      "runAfter": {
+                        "Compose_-_button_title_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "52cf1569-7b92-4338-b001-f2574f9ea346"
+                      },
+                      "type": "Compose",
+                      "inputs": "https://org250e4bf3.crm4.dynamics.com/main.aspx?appid=868e1665-3a54-f011-877b-6045bdf3faaa&pagetype=entitylist&etn=cr468_dm_nonconformities&viewid=83199687-0f58-469a-ad00-43943849c511&viewType=1039"
+                    },
+                    "Compose_-_Email_Body_2": {
+                      "runAfter": {
+                        "Compose_-_URL_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "6a7eef45-a2ec-4890-9ff9-ce040a77f47f"
+                      },
+                      "type": "Compose",
+                      "inputs": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" style=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; color: #4B4B4B;\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>Actionable emails e.g. reset password</title>\n\n<style type=\"text/css\">\nimg {\nmax-width: 100%;\n}\nbody {\n-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6em; color: #4B4B4B;\n}\nbody {\nbackground-color: #f6f6f6;\n}\n@media only screen and (max-width: 640px) {\n  body {\n    padding: 0 !important;\n  }\n  h1, h2, h3, h4 {\n    font-weight: 800 !important; margin: 20px 0 5px !important;\n  }\n  h1 {\n    font-size: 22px !important;\n  }\n  h2 {\n    font-size: 18px !important;\n  }\n  h3 {\n    font-size: 16px !important;\n  }\n  .container {\n    padding: 0 !important; width: 100% !important;\n  }\n  .content {\n    padding: 0 !important;\n  }\n  .content-wrap {\n    padding: 10px !important;\n  }\n  .invoice {\n    width: 100% !important;\n  }\n}\n</style>\n</head>\n\n<body itemscope itemtype=\"http://schema.org/EmailMessage\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6em; background-color: #f6f6f6; margin: 0; color: #4B4B4B;\" bgcolor=\"#f6f6f6\">\n\n<table class=\"body-wrap\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; background-color: #f6f6f6; margin: 0; color: #4B4B4B;\" bgcolor=\"#f6f6f6\">\n<tr><td></td>\n<td class=\"container\" width=\"600\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto; color: #4B4B4B;\">\n<div class=\"content\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; max-width: 600px; display: block; margin: 0 auto; padding: 20px; color: #4B4B4B;\">\n<table class=\"main\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-radius: 3px; background-color: #fff; margin: 0; border: 1px solid #e9e9e9; color: #4B4B4B;\" bgcolor=\"#fff\">\n<tr><td class=\"content-wrap\" style=\"padding: 20px; color: #4B4B4B;\">\n<meta itemprop=\"name\" content=\"Confirm Email\" />\n<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td class=\"content-block\" style=\"padding: 0 0 20px; color: #4B4B4B;\">\n<h4>@{outputs('Compose_-_Title_email_2')} </h4>\n</td></tr>\n<tr><td class=\"content-block\" style=\"padding: 0 0 20px; color: #4B4B4B;\">\n@{outputs('Compose_-_Paragraph_Email_2')}\n</td></tr>\n<tr><td class=\"content-block\" itemprop=\"handler\" itemscope itemtype=\"http://schema.org/HttpActionHandler\" style=\"padding: 0 0 20px; color: #4B4B4B;\">\n<a href=\"@{outputs('Compose_-_URL_2')}\" class=\"btn-primary\" itemprop=\"url\" style=\"color: #FFF; text-decoration: none; line-height: 2em; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 5px; text-transform: capitalize; background-color: #4B4B4B; margin: 0; border-color: #4B4B4B; border-style: solid; border-width: 10px 20px;\">@{outputs('Compose_-_button_title_2')}</a>\n</td></tr>\n<tr><td class=\"content-block\" style=\"padding: 0 0 20px; color: #4B4B4B;\"></td></tr>\n</table>\n</td></tr>\n</table>\n<div class=\"footer\" style=\"width: 100%; clear: both; color: #999; margin: 0; padding: 20px;\">\n<table width=\"100%\">\n<tr><td class=\"aligncenter content-block\" style=\"font-size: 12px; color: #999; text-align: center; padding: 0 0 20px;\">\nThis is an automatically generated email sent via Power Automate. Please do not reply.\n</td></tr>\n</table>\n</div>\n</div>\n</td>\n<td></td>\n</tr>\n</table>\n</body>\n</html>\n"
+                    },
+                    "Send_an_email_(V2)_2": {
+                      "runAfter": {
+                        "Compose_-_Email_Body_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "0c321939-11c3-4f7c-80ed-aaa25ec59619"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_office365",
+                          "operationId": "SendEmailV2",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                        },
+                        "parameters": {
+                          "emailMessage/To": "@outputs('Compose_-_manager_email_2')",
+                          "emailMessage/Subject": "Nonconformity Updated - @{triggerOutputs()?['body/cr468_title']} ",
+                          "emailMessage/Body": "<p>@{outputs('Compose_-_Email_Body_2')}</p>",
+                          "emailMessage/Importance": "Normal"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  },
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "8c62006c-ac92-48f4-a283-384eba971743"
+                  },
+                  "type": "Scope"
+                }
+              }
+            }
+          },
+          "default": {
+            "actions": {}
+          },
+          "expression": "@triggerOutputs()?['body/SdkMessage']",
+          "metadata": {
+            "operationMetadataId": "53b631c3-963b-488a-9e7f-1aa362f71cf1"
+          },
+          "type": "Switch"
+        },
+        "List_rows_-_responsible_manager": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "34ee4d48-642e-40d0-a912-2905301e0720"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "cr468_dm_managerses",
+              "$filter": "cr468_discrepancytype eq @{triggerOutputs()?['body/cr468_type']}"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

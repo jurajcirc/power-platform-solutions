@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FieldSecurityProfiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FieldSecurityProfile name="Basic User Can Read Resolution Field" fieldsecurityprofileid="{8929cd7c-1758-f011-bec1-6045bdf3faaa}">
+    <FieldPermissions>
+      <FieldPermission>
+        <EntityName>cr468_dm_nonconformities</EntityName>
+        <AttributeName>cr468_resolution</AttributeName>
+        <CanRead>4</CanRead>
+        <CanUpdate>0</CanUpdate>
+        <CanCreate>4</CanCreate>
+      </FieldPermission>
+    </FieldPermissions>
+  </FieldSecurityProfile>
+  <FieldSecurityProfile name="Basic User Can See Assigned Manager" fieldsecurityprofileid="{fa50df47-f25c-f011-bec1-6045bdf3faaa}">
+    <FieldPermissions>
+      <FieldPermission>
+        <EntityName>cr468_dm_nonconformities</EntityName>
+        <AttributeName>cr468_assignedmanager</AttributeName>
+        <CanRead>4</CanRead>
+        <CanUpdate>0</CanUpdate>
+        <CanCreate>0</CanCreate>
+      </FieldPermission>
+    </FieldPermissions>
+  </FieldSecurityProfile>
+  <FieldSecurityProfile name="Manager Can Update Assigned Manager" fieldsecurityprofileid="{7193576e-f25c-f011-bec1-6045bdf3faaa}">
+    <FieldPermissions>
+      <FieldPermission>
+        <EntityName>cr468_dm_nonconformities</EntityName>
+        <AttributeName>cr468_assignedmanager</AttributeName>
+        <CanRead>4</CanRead>
+        <CanUpdate>4</CanUpdate>
+        <CanCreate>4</CanCreate>
+      </FieldPermission>
+    </FieldPermissions>
+  </FieldSecurityProfile>
+  <FieldSecurityProfile name="Manager Can Update Resolution Field" fieldsecurityprofileid="{71870b3d-1758-f011-bec1-6045bdf3faaa}">
+    <FieldPermissions>
+      <FieldPermission>
+        <EntityName>cr468_dm_nonconformities</EntityName>
+        <AttributeName>cr468_resolution</AttributeName>
+        <CanRead>4</CanRead>
+        <CanUpdate>4</CanUpdate>
+        <CanCreate>4</CanCreate>
+      </FieldPermission>
+      <FieldPermission>
+        <EntityName>cr468_dm_nonconformities</EntityName>
+        <AttributeName>cr468_assignedmanager</AttributeName>
+        <CanRead>4</CanRead>
+        <CanUpdate>4</CanUpdate>
+        <CanCreate>4</CanCreate>
+      </FieldPermission>
+    </FieldPermissions>
+  </FieldSecurityProfile>
+</FieldSecurityProfiles>

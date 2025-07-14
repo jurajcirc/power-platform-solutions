@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25062.192" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25063.00192">
+  <Entities />
+  <Roles />
+  <Workflows />
+  <FieldSecurityProfiles />
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <WebResources />
+  <CustomControls />
+  <AppModuleSiteMaps />
+  <AppModules />
+  <EntityDataProviders />
+  <CanvasApps />
+  <appaction_appactionrule_classicrulesset>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" appactionruleid.uniquename="msdyn_Mscrm.AvailableOnForm!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" appactionruleid.uniquename="msdyn_Mscrm.CanSavePrimary!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" appactionruleid.uniquename="msdyn_Mscrm.CanSavePrimaryEntityType!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" appactionruleid.uniquename="msdyn_Mscrm.IsAutoSaveDisable!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" appactionruleid.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" appactionruleid.uniquename="msdyn_Mscrm.OutlookRenderTypeWeb!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" appactionruleid.uniquename="msdyn_Mscrm.ReadPrimaryPermission!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.CanWriteSelected!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.SelectedEntityHasStatecode!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.SelectionCountAtLeastOne!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.VisualizationPaneNotMaximized!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.CanWriteSelected!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.SelectedEntityHasStatecode!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.SelectionCountAtLeastOne!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.VisualizationPaneNotMaximized!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.CreateSelectedEntityPermission!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.HideAddressEntities!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.HideNewForChildEntities!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.IsNotActivityPointer!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.IsValidForHierarchyPageInUC!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.IsValidForHierarchyView!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.PrimaryIsNotActivityHomePageGrid!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.SelectedEntityIsNotBPFEntity!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.ShowForNonRelationshipBoundGrids!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.CreateSelectedEntityPermission!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.IsBPFEntityCustomizationFeatureEnabled!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.IsPUV2EntityCustomizationEnabled!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.IsValidForHierarchyPageInUC!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.IsValidForHierarchyView!0">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+    <appaction_appactionrule_classicrules appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" appactionruleid.uniquename="msdyn_Mscrm.SelectedEntityIsBPFEntity!1">
+      <iscustomizable>1</iscustomizable>
+    </appaction_appactionrule_classicrules>
+  </appaction_appactionrule_classicrulesset>
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="cr468_sharedcommondataserviceforapps_66b08">
+      <connectionreferencedisplayname>Microsoft Dataverse DiscrepancyManagement-66b08</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr468_sharedoffice365_60dc9">
+      <connectionreferencedisplayname>Office 365 Outlook DiscrepancyManagement-60dc9</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr468_sharedsharepointonline_a2a57">
+      <connectionreferencedisplayname>SharePoint DiscrepancyManagement-a2a57</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr468_sharedwordonlinebusiness_948a4">
+      <connectionreferencedisplayname>Word Online (Business) DiscrepancyManagement-948a4</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

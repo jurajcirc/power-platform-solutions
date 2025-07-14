@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{f6aa4d6d-b256-f011-877b-6045bdf3faaa}</WebResourceId>
+  <Name>cr468_new_showHideEvidence.js</Name>
+  <LanguageCode>0</LanguageCode>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/cr468_new_showHideEvidencejsF6AA4D6D-B256-F011-877B-6045BDF3FAAA</FileName>
+</WebResource>

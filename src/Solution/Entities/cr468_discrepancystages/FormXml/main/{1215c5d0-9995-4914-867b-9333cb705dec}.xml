@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1215c5d0-9995-4914-867b-9333cb705dec}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{3b095371-7742-4c32-8b28-3d1301506377}" name="StageStep3" locklevel="0" expanded="true" visible="false" labelid="{80816fe1-46ee-483a-bf9e-925d7139f567}">
+          <labels>
+            <label description="Discrepancy Info" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{18f4b4e8-fce5-c84a-b9bf-225840bed0eb}" name="StageStep3_section1" labelid="{8aece5a0-2a36-46e2-bb85-73c3fba68c7e}">
+                  <labels>
+                    <label description="Discrepancy Info" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2ec18824-44c1-43f2-bf81-489ccf449181}" showlabel="true" visible="true" labelid="{18607581-5baf-49fc-8304-f1b00ba9adeb}">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_cr468_dm_nonconformities_cr468_discrepancystages:cr468_title" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="cr468_title" disabled="false" relationship="bpf_cr468_dm_nonconformities_cr468_discrepancystages" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{b455dab0-2e2f-4ff4-83d7-44cef570d09d}" name="StageStep7" locklevel="0" expanded="true" visible="false" labelid="{e2455246-4790-49a2-93a0-42000fe597c8}">
+          <labels>
+            <label description="Attach Evidence" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{a060c6f0-039b-63a4-4eb0-1fcf7efce575}" name="StageStep7_section1" labelid="{0d03e110-9233-4d95-9a12-3f5fa4dd9cd1}">
+                  <labels>
+                    <label description="Attach Evidence" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5bd444a7-192f-4ede-b155-e7430e647d1a}" showlabel="true" visible="true" labelid="{0e155748-94ec-4d7a-8abc-78f1ae42082b}">
+                        <labels>
+                          <label description="Provide Comments on Evidence (optional)" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_cr468_dm_nonconformities_cr468_discrepancystages:cr468_evidencecomments" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr468_evidencecomments" disabled="false" relationship="bpf_cr468_dm_nonconformities_cr468_discrepancystages" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{73b50251-9ea3-47c0-8a94-da7ab7da2ec9}" name="StageStep11" locklevel="0" expanded="true" visible="false" labelid="{3202930c-c51f-463d-a106-cb846151fc52}">
+          <labels>
+            <label description="Close Discrepancy" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{b259a426-9b87-99c5-5630-f8138a186652}" name="StageStep11_section1" labelid="{8cdc7c35-3878-4e56-903f-46867c034f89}">
+                  <labels>
+                    <label description="Close Discrepancy" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{bb9d974c-7cdc-411a-a6d8-a31d5eaed1bc}" showlabel="true" visible="true" labelid="{b71c3d04-e6ef-4248-957c-2ce308838c90}">
+                        <labels>
+                          <label description="Discrepancy Resolution" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_cr468_dm_nonconformities_cr468_discrepancystages:cr468_resolution" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="cr468_resolution" disabled="false" relationship="bpf_cr468_dm_nonconformities_cr468_discrepancystages" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{92c9b68b-7dea-4a49-a81e-d507649d5923}" showlabel="true" visible="true" labelid="{f2182b50-3079-4a03-9a23-ad9b453f50bc}">
+                        <labels>
+                          <label description="Final Comment (optional)" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_cr468_dm_nonconformities_cr468_discrepancystages:cr468_overallcomment" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr468_overallcomment" disabled="false" relationship="bpf_cr468_dm_nonconformities_cr468_discrepancystages" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

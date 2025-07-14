@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.25062.192" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25062.192" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25063.00192">
+  <SolutionManifest>
+    <UniqueName>DiscrepancyManagement</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Discrepancy Management" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.0</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>Cr2040d</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="CDS Default Publisher" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>cr468</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>48693</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="cr468_discrepancystages" behavior="0" />
+      <RootComponent type="1" schemaName="cr468_dm_correctiveactions" behavior="0" />
+      <RootComponent type="1" schemaName="cr468_dm_evidence" behavior="0" />
+      <RootComponent type="1" schemaName="cr468_dm_managers" behavior="0" />
+      <RootComponent type="1" schemaName="cr468_dm_nonconformities" behavior="0" />
+      <RootComponent type="1" schemaName="cr468_dm_projects" behavior="0" />
+      <RootComponent type="1" schemaName="systemuser" behavior="1" />
+      <RootComponent type="20" id="{60d92c9f-1258-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="20" id="{75213e69-1158-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{1d6e8605-2060-f011-bec2-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{2e1f4d4b-1658-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{2e5f7ab5-8e56-f011-877b-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{2fa77155-2d58-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{47ec9e8b-8a56-f011-877b-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{5339368c-5554-f011-877b-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{5b64212d-8a56-f011-877b-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{b4a60f1b-fa5c-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{d04292cc-3f5b-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{f08a29a9-e658-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="29" id="{f3877f59-405b-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="300" schemaName="cr0a1_canvastemplate002mui_ce6a8" behavior="0" />
+      <RootComponent type="300" schemaName="cr468_dmreportnoncomformitiesappdefaultcommandlibrary_e9b93" behavior="0" />
+      <RootComponent type="300" schemaName="crda1_reusableuicomponents_69811" behavior="0" />
+      <RootComponent type="61" schemaName="accessChecker_openDialog.js" behavior="0" />
+      <RootComponent type="61" schemaName="cr468_new_SaveAndNextStage.js" behavior="0" />
+      <RootComponent type="61" schemaName="cr468_new_showHideEvidence.js" behavior="0" />
+      <RootComponent type="62" schemaName="cr468_DM_Report_NonComformities_App" behavior="0" />
+      <RootComponent type="70" id="{71870b3d-1758-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="70" id="{7193576e-f25c-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="70" id="{8929cd7c-1758-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="70" id="{fa50df47-f25c-f011-bec1-6045bdf3faaa}" behavior="0" />
+      <RootComponent type="80" schemaName="cr468_DM_Report_NonComformities_App" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="61" schemaName="accessChecker_openDialog.js" displayName="accessChecker_openDialog.js" solution="msft_AccessCheckerExtension (1.1.0.4)">
+          <package appName="PowerAppsUnifiedClientExtensionApp Package" version="1.0.0.62">msft_PowerAppsUnifiedClientInfraExtensions (1.0.0.62)</package>
+        </Required>
+        <Dependent type="61" schemaName="accessChecker_openDialog.js" displayName="accessChecker_openDialog.js" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)">
+          <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
+        </Required>
+        <Dependent type="80" schemaName="cr468_DM_Report_NonComformities_App" displayName="DM - Report NonComformities App" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.AvailableOnForm!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.AvailableOnForm!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.Form.%7B!EntityLogicalName%7D.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0,appactionruleid.uniquename=msdyn_Mscrm.AvailableOnForm!0" id.appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" id.appactionruleid.uniquename="msdyn_Mscrm.AvailableOnForm!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.CanSavePrimary!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.CanSavePrimary!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.Form.%7B!EntityLogicalName%7D.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0,appactionruleid.uniquename=msdyn_Mscrm.CanSavePrimary!0" id.appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" id.appactionruleid.uniquename="msdyn_Mscrm.CanSavePrimary!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.CanSavePrimaryEntityType!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.CanSavePrimaryEntityType!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.Form.%7B!EntityLogicalName%7D.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0,appactionruleid.uniquename=msdyn_Mscrm.CanSavePrimaryEntityType!1" id.appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" id.appactionruleid.uniquename="msdyn_Mscrm.CanSavePrimaryEntityType!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.CanWriteSelected!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.CanWriteSelected!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.CanWriteSelected!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.CanWriteSelected!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.CanWriteSelected!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.CanWriteSelected!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.CanWriteSelected!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.CanWriteSelected!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.CreateSelectedEntityPermission!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.CreateSelectedEntityPermission!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.CreateSelectedEntityPermission!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.CreateSelectedEntityPermission!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.CreateSelectedEntityPermission!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.CreateSelectedEntityPermission!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.CreateSelectedEntityPermission!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.CreateSelectedEntityPermission!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.HideAddressEntities!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HideAddressEntities!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.HideAddressEntities!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.HideAddressEntities!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.HideNewForChildEntities!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HideNewForChildEntities!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.HideNewForChildEntities!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.HideNewForChildEntities!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsAutoSaveDisable!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsAutoSaveDisable!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.Form.%7B!EntityLogicalName%7D.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0,appactionruleid.uniquename=msdyn_Mscrm.IsAutoSaveDisable!0" id.appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" id.appactionruleid.uniquename="msdyn_Mscrm.IsAutoSaveDisable!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsBPFEntityCustomizationFeatureEnabled!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsBPFEntityCustomizationFeatureEnabled!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.IsBPFEntityCustomizationFeatureEnabled!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.IsBPFEntityCustomizationFeatureEnabled!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.Form.%7B!EntityLogicalName%7D.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0,appactionruleid.uniquename=msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" id.appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" id.appactionruleid.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsNotActivityPointer!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsNotActivityPointer!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.IsNotActivityPointer!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.IsNotActivityPointer!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsPUV2EntityCustomizationEnabled!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsPUV2EntityCustomizationEnabled!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.IsPUV2EntityCustomizationEnabled!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.IsPUV2EntityCustomizationEnabled!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsValidForHierarchyPageInUC!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsValidForHierarchyPageInUC!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.IsValidForHierarchyPageInUC!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.IsValidForHierarchyPageInUC!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsValidForHierarchyPageInUC!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsValidForHierarchyPageInUC!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.IsValidForHierarchyPageInUC!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.IsValidForHierarchyPageInUC!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsValidForHierarchyView!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsValidForHierarchyView!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.IsValidForHierarchyView!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.IsValidForHierarchyView!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsValidForHierarchyView!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsValidForHierarchyView!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.IsValidForHierarchyView!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.IsValidForHierarchyView!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.OutlookRenderTypeWeb!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.OutlookRenderTypeWeb!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.Form.%7B!EntityLogicalName%7D.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0,appactionruleid.uniquename=msdyn_Mscrm.OutlookRenderTypeWeb!1" id.appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" id.appactionruleid.uniquename="msdyn_Mscrm.OutlookRenderTypeWeb!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.PrimaryIsNotActivityHomePageGrid!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.PrimaryIsNotActivityHomePageGrid!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.PrimaryIsNotActivityHomePageGrid!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.PrimaryIsNotActivityHomePageGrid!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.ReadPrimaryPermission!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.ReadPrimaryPermission!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.Form.%7B!EntityLogicalName%7D.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0,appactionruleid.uniquename=msdyn_Mscrm.ReadPrimaryPermission!0" id.appactionid.uniquename="cr468__Mscrm.Form.{!EntityLogicalName}.Save!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0" id.appactionruleid.uniquename="msdyn_Mscrm.ReadPrimaryPermission!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.SelectedEntityHasStatecode!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SelectedEntityHasStatecode!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.SelectedEntityHasStatecode!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.SelectedEntityHasStatecode!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.SelectedEntityHasStatecode!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SelectedEntityHasStatecode!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.SelectedEntityHasStatecode!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.SelectedEntityHasStatecode!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.SelectedEntityIsBPFEntity!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SelectedEntityIsBPFEntity!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.SelectedEntityIsBPFEntity!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.SelectedEntityIsBPFEntity!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.SelectedEntityIsNotBPFEntity!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SelectedEntityIsNotBPFEntity!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.SelectedEntityIsNotBPFEntity!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.SelectedEntityIsNotBPFEntity!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.SelectionCountAtLeastOne!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SelectionCountAtLeastOne!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.SelectionCountAtLeastOne!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.SelectionCountAtLeastOne!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.SelectionCountAtLeastOne!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SelectionCountAtLeastOne!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.SelectionCountAtLeastOne!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.SelectionCountAtLeastOne!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.ShowForNonRelationshipBoundGrids!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.ShowForNonRelationshipBoundGrids!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.ShowForNonRelationshipBoundGrids!1" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.ShowForNonRelationshipBoundGrids!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.VisualizationPaneNotMaximized!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.VisualizationPaneNotMaximized!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.VisualizationPaneNotMaximized!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.VisualizationPaneNotMaximized!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.VisualizationPaneNotMaximized!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.VisualizationPaneNotMaximized!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=cr468__Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1,appactionruleid.uniquename=msdyn_Mscrm.VisualizationPaneNotMaximized!0" id.appactionid.uniquename="cr468__Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!1" id.appactionruleid.uniquename="msdyn_Mscrm.VisualizationPaneNotMaximized!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.15)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.21">PowerAppsAppFramework_Anchor (1.0.0.21)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=cr468_DM_Report_NonComformities_App,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="cr468_DM_Report_NonComformities_App" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

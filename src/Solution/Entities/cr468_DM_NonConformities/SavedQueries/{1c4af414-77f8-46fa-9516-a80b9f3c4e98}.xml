@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{1c4af414-77f8-46fa-9516-a80b9f3c4e98}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr468_title" select="1" icon="1" preview="1">
+        <row name="result" id="cr468_dm_nonconformitiesid">
+          <cell name="cr468_title" width="300" />
+          <cell name="cr468_resolution" width="257" />
+          <cell name="cr468_assignedmanager" width="142" />
+          <cell name="createdon" width="125" />
+          <cell name="createdby" width="177" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr468_dm_nonconformities">
+          <attribute name="cr468_dm_nonconformitiesid" />
+          <attribute name="cr468_title" />
+          <attribute name="createdon" />
+          <order attribute="cr468_title" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <attribute name="cr468_resolution" />
+          <attribute name="cr468_assignedmanager" />
+          <attribute name="createdby" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive NonConformities" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

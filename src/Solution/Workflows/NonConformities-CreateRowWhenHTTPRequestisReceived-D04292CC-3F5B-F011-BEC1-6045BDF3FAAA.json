@@ -1,0 +1,165 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr468_sharedcommondataserviceforapps_66b08"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "0b7cac72-d846-4601-bdc0-b73fd878fdd7"
+          },
+          "type": "Request",
+          "kind": "Http",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "nonConformityType": {
+                  "type": "string"
+                }
+              }
+            },
+            "method": "POST",
+            "triggerAuthenticationType": "All"
+          }
+        }
+      },
+      "actions": {
+        "Add_a_new_row": {
+          "runAfter": {
+            "Switch": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "000d065b-820d-448b-9276-db0484d9f65d"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "CreateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "cr468_dm_nonconformitieses",
+              "item/cr468_title": "@triggerBody()?['title']",
+              "item/cr468_type": "@variables('Type')",
+              "item/cr468_description": "@triggerBody()?['description']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Switch": {
+          "runAfter": {
+            "Initialize_variable_-_type": [
+              "Succeeded"
+            ]
+          },
+          "cases": {
+            "Case": {
+              "case": "Safety",
+              "actions": {
+                "Set_variable": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "17adc62b-526a-43d7-a6cf-ed95d32f7c64"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Type",
+                    "value": 10
+                  }
+                }
+              }
+            },
+            "Case_2": {
+              "case": "Quality",
+              "actions": {
+                "Set_variable_2": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "4d88628e-4cca-43c3-aa14-202339495eef"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Type",
+                    "value": 20
+                  }
+                }
+              }
+            },
+            "Case_3": {
+              "case": "Environmental",
+              "actions": {
+                "Set_variable_3": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "6041d9fe-c13d-4948-8c40-5969f942803e"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Type",
+                    "value": 30
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "actions": {}
+          },
+          "expression": "@triggerBody()?['nonConformityType']",
+          "metadata": {
+            "operationMetadataId": "6cbec85f-95d0-466b-a651-257cd7a0a017"
+          },
+          "type": "Switch"
+        },
+        "Initialize_variable_-_type": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "389bb8ba-eb1f-4d4d-8983-fc8a65e747a4"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Type",
+                "type": "integer"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{7f516b3f-3dad-443b-a5fe-95d6126f3536}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{f56bee8d-32dd-465a-b8b9-12c8bcc63047}" IsUserDefined="1" name="General">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="Details_Section" id="d09b8b90-fb9d-402b-a76d-303cf4b24d9e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Discrepancy Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{146b5865-12af-4990-8317-c8a4fdaf5907}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Discrepancy Title" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_title" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr468_title" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{34b288b5-eef0-4fa3-a292-62e2837f9950}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_description" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="cr468_description" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{44e9dac2-3b63-4307-b58e-9ae2a39ce7d6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Project" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_project" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr468_project" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f847a27f-01c7-4359-94ef-4de64b1f672c}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Type" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_type" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="cr468_type" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2d20e260-15a5-4a55-8d94-9cd48983f92b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Quality Discrepancy Level" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_qualitydiscrepancylevel" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="cr468_qualitydiscrepancylevel" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{262676a5-6d56-4cd5-9aa8-f2aeea73d837}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Environmental Impact" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_environmentalimpact" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="cr468_environmentalimpact" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{296aae30-165d-488a-98af-f39b6865e732}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Safety Impact" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_safetyimpact" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="cr468_safetyimpact" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="Evidence" id="68d8ba84-646b-4617-bec9-ebaf11f695bb" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Evidence" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{cfdd3c29-b805-4850-a65d-ec85b3aeb9d1}" name="Evidence">
+                  <labels>
+                    <label description="Evidence" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c3018300-beac-4bf2-b82b-e0cdb1d6461d}" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{08a35671-ad11-4da5-b3a7-05201626fb4d}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Evidence" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Evidence" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>cr468_dm_evidence_NonConformityID_cr468_dm_nonconformities</RelationshipName>
+                            <TargetEntityType>cr468_dm_evidence</TargetEntityType>
+                            <ViewId>{FA33ED2C-7E9A-4535-8E05-A87A69A9D4A2}</ViewId>
+                            <ViewIds>{FA33ED2C-7E9A-4535-8E05-A87A69A9D4A2}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="Corrective" id="d61cb0ee-3ad8-4673-9f2c-c0d0c190967f" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
+          <labels>
+            <label description="Corrective Actions" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="Corrective_section_3" id="25ab43a2-b57c-44c4-9331-693188b89106" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Discrepancy Managers are able to close Discrepancies" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{ef335fe6-6858-4bed-a8e9-3ab9decd7aef}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="AssignedManager" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_assignedmanager" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr468_assignedmanager" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Corrective" id="f677339a-c25c-4463-a7ed-df9c529909b8" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Corrective" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{edbfe45c-1ca9-4e9f-8b4e-95335c394de9}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Corrective Actions" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Corrective_Actions" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>cr468_dm_correctiveactions_NonConformity_cr468_dm_nonconformities</RelationshipName>
+                            <TargetEntityType>cr468_dm_correctiveactions</TargetEntityType>
+                            <ViewId>{636C80A2-1223-42FD-BED1-DBDED1948710}</ViewId>
+                            <ViewIds>{636C80A2-1223-42FD-BED1-DBDED1948710}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{273dffd7-ca54-4983-b767-bb078a3a812f}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{d2424d05-361a-46c7-837a-895db3e93e06}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{cd7d0910-fdf2-4674-8000-88fbc06c60ae}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d02c2d53-7cb9-47ca-966d-569c900095b9}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{69327ecf-76cb-4216-a0d4-135a2258128e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{a4d93f07-dc13-49dc-aefb-d0d680cce38d}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ffdb79e8-a92a-45fc-b6fc-1b4b484c2c4a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ba601270-b130-4477-af2e-9ad218b88935}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="cr468_new_showHideEvidence.js" libraryUniqueId="{f7cbd03a-1be3-4310-99cd-b41a52f5c4ff}" />
+        <Library name="cr468_new_SaveAndNextStage.js" libraryUniqueId="{ce6fb063-3971-47d0-b547-e0f4a6af1e85}" />
+      </formLibraries>
+      <events>
+        <event name="onsave" application="false" active="false">
+          <Handlers>
+            <Handler functionName="showHideTabsByStage" libraryName="cr468_new_showHideEvidence.js" handlerUniqueId="{ec099e6a-0d15-4209-abe9-3a05c7a32eae}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="showHideTabsByStage" libraryName="cr468_new_showHideEvidence.js" handlerUniqueId="{f02c149b-1899-470d-83eb-c410ffa50054}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
