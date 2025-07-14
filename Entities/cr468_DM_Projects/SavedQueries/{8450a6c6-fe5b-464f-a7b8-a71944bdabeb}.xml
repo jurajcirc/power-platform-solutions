@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{8450a6c6-fe5b-464f-a7b8-a71944bdabeb}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr468_projectname" select="1" icon="1" preview="1">
+        <row name="result" id="cr468_dm_projectsid">
+          <cell name="cr468_projectname" width="300" />
+          <cell name="cr468_projectdescription" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr468_dm_projects">
+          <attribute name="cr468_dm_projectsid" />
+          <attribute name="cr468_projectname" />
+          <attribute name="createdon" />
+          <order attribute="cr468_projectname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cr468_projectdescription" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active DM_Projects" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

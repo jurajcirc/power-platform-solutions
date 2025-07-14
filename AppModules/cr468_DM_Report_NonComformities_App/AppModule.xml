@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>cr468_DM_Report_NonComformities_App</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="cr468_dm_nonconformities" />
+    <AppModuleComponent type="62" schemaName="cr468_DM_Report_NonComformities_App" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{60d92c9f-1258-f011-bec1-6045bdf3faaa}" />
+    <Role id="{75213e69-1158-f011-bec1-6045bdf3faaa}" />
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="DM - Report NonComformities App" languagecode="1033" />
+  </LocalizedNames>
+  <appelements>
+    <appelement uniquename="cr468_cr468_DM_Report_NonComformities_App_canvasappid_cr468_dmreportnoncomformitiesappdefaultcommandlibrary_e9b93">
+      <canvasappid>
+        <name>cr468_dmreportnoncomformitiesappdefaultcommandlibrary_e9b93</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>cr468_cr468_DM_Report_NonComformities_App_canvasappid_cr468_dmreportnoncomformitiesappdefaultcommandlibrary_e9b93</name>
+    </appelement>
+  </appelements>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

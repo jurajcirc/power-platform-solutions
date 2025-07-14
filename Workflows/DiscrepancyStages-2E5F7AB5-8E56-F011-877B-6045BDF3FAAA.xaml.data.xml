@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{2e5f7ab5-8e56-f011-877b-6045bdf3faaa}" Name="Discrepancy Stages" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/DiscrepancyStages-2E5F7AB5-8E56-F011-877B-6045BDF3FAAA.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>100</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>cr468_discrepancystages</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>cr468_DM_NonConformities</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Discrepancy Stages" />
+  </LocalizedNames>
+  <labels>
+    <steplabels id="{3b095371-7742-4c32-8b28-3d1301506377}">
+      <label languagecode="1033" description="Discrepancy Info" />
+    </steplabels>
+    <steplabels id="{2ec18824-44c1-43f2-bf81-489ccf449181}">
+      <label languagecode="1033" description="Title" />
+    </steplabels>
+    <steplabels id="{b455dab0-2e2f-4ff4-83d7-44cef570d09d}">
+      <label languagecode="1033" description="Attach Evidence" />
+    </steplabels>
+    <steplabels id="{5bd444a7-192f-4ede-b155-e7430e647d1a}">
+      <label languagecode="1033" description="Provide Comments on Evidence (optional)" />
+    </steplabels>
+    <steplabels id="{73b50251-9ea3-47c0-8a94-da7ab7da2ec9}">
+      <label languagecode="1033" description="Close Discrepancy" />
+    </steplabels>
+    <steplabels id="{bb9d974c-7cdc-411a-a6d8-a31d5eaed1bc}">
+      <label languagecode="1033" description="Discrepancy Resolution" />
+    </steplabels>
+    <steplabels id="{92c9b68b-7dea-4a49-a81e-d507649d5923}">
+      <label languagecode="1033" description="Final Comment (optional)" />
+    </steplabels>
+  </labels>
+</Workflow>

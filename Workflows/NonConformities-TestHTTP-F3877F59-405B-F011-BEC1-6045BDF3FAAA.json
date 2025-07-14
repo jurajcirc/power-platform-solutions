@@ -1,0 +1,53 @@
+{
+  "properties": {
+    "connectionReferences": {},
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "eebc6e55-2dff-48cd-ba3e-106ab0eef6f6"
+          },
+          "type": "Request",
+          "kind": "Button",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      },
+      "actions": {
+        "HTTP": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "c7c8d13e-c4d4-43c5-b011-29ce65bdd4d9"
+          },
+          "type": "Http",
+          "inputs": {
+            "method": "POST",
+            "uri": "https://2a13bdc7cdeee42386871c299335e7.52.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/a597852ccc884758b53b132d0c0be071/triggers/manual/paths/invoke/?api-version=1&tenantId=tId&environmentName=2a13bdc7-cdee-e423-8687-1c299335e752&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=yzZOSerY55fh77ZTaA9QNssgFlyVbz93Hj4E9LoSk6Q",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "title": "API Discrepancy",
+              "description": "Bolts were missing on beam X."
+            }
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

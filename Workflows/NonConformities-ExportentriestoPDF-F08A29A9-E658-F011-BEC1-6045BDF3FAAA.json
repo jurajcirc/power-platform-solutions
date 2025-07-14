@@ -1,0 +1,404 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_wordonlinebusiness": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "cr468_sharedwordonlinebusiness_948a4"
+        },
+        "api": {
+          "name": "shared_wordonlinebusiness"
+        }
+      },
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr468_sharedcommondataserviceforapps_66b08"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "cr468_sharedsharepointonline_a2a57"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "cr468_sharedoffice365_60dc9"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "e2d28f74-6c46-4427-a6f5-65ee755fffae"
+          },
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      },
+      "actions": {
+        "Populate_a_Microsoft_Word_template": {
+          "runAfter": {
+            "Select_-_Discrepancies": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "01YR7KZMJTDQA3HXP3UJGJUNUVJ45TONWB": "/Word Template/Word Template - List Discrepancies.docx",
+            "operationMetadataId": "414f0363-7eff-4d01-977e-6746e249720a",
+            "01YR7KZMONEOBYNLVD2BAZBG6YJ6HHETXT": "/Word Template/Word Template - List Discrepancies.docx"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_wordonlinebusiness",
+              "operationId": "CreateFileItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+            },
+            "parameters": {
+              "source": "groups/2490dc47-bf12-475b-8e84-df4c26625107",
+              "drive": "b!M7uphGltbUiH8lY5KOVKNQwTj8k3YxtKpoVEhK2VbKvvjwfaQONJQ7k1iFu6BI5T",
+              "file": "01YR7KZMONEOBYNLVD2BAZBG6YJ6HHETXT",
+              "dynamicFileSchema/99616326": "Juraj Circ",
+              "dynamicFileSchema/646254122": "@utcNow()",
+              "dynamicFileSchema/-519084584": "@body('Select_-_Discrepancies')"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "List_rows": {
+          "runAfter": {
+            "Delete_file": [
+              "Succeeded",
+              "TimedOut",
+              "Skipped",
+              "Failed"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "15adc764-24bc-447e-a4f5-0d5b172e3960"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "cr468_dm_nonconformitieses",
+              "$filter": "statecode eq 0"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Select_-_Discrepancies": {
+          "runAfter": {
+            "List_rows": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "fbbe6388-3bca-4e3c-a887-80f389f8118d"
+          },
+          "type": "Select",
+          "inputs": {
+            "from": "@outputs('List_rows')?['body/value']",
+            "select": {
+              "xDiscrepancyTitle": "@item()?['cr468_title']",
+              "xTypeDiscrepancy": "@item()?['cr468_type@OData.Community.Display.V1.FormattedValue']",
+              "xManager": "@item()?['cr468_assigneddiscrepancymanager']",
+              "xStatus": "@item()?['cr468_discrepancystatus@OData.Community.Display.V1.FormattedValue']",
+              "xCreated": "@formatDateTime(item()?['createdon'], 'dd/MM/yyyy')"
+            }
+          }
+        },
+        "Compose_FileName": {
+          "runAfter": {
+            "Populate_a_Microsoft_Word_template": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "49b3de53-e539-4632-b051-e84990a9d0b4"
+          },
+          "type": "Compose",
+          "inputs": "Non_Conformities_Report.docx"
+        },
+        "Create_file": {
+          "runAfter": {
+            "Compose_FileName": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "35030807-a25f-4617-ace0-a961a1c89d32"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "CreateFile",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "https://schnauzersystem.sharepoint.com/sites/DevSPSite",
+              "folderPath": "/Non Conformities",
+              "name": "@outputs('Compose_FileName')",
+              "body": "@body('Populate_a_Microsoft_Word_template')"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          }
+        },
+        "Convert_Word_Document_to_PDF": {
+          "runAfter": {
+            "Create_file": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "efea3d99-43e5-4a0d-8c87-334c5e41c8be"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_wordonlinebusiness",
+              "operationId": "GetFilePDF",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_wordonlinebusiness"
+            },
+            "parameters": {
+              "source": "sites/schnauzersystem.sharepoint.com,84a9bb33-6d69-486d-87f2-563928e54a35,c98f130c-6337-4a1b-a685-4484ad956cab",
+              "drive": "b!M7uphGltbUiH8lY5KOVKNQwTj8k3YxtKpoVEhK2VbKvvjwfaQONJQ7k1iFu6BI5T",
+              "file": "/Non_Conformities_Report.docx"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Create_file_2": {
+          "runAfter": {
+            "Compose_-_pdf_file_name": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3de85db4-39a8-4933-b77e-3436385ea859"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "CreateFile",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "https://schnauzersystem.sharepoint.com/sites/DevSPSite",
+              "folderPath": "/Non Conformities",
+              "name": "@outputs('Compose_-_pdf_file_name')",
+              "body": "@body('Convert_Word_Document_to_PDF')"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          }
+        },
+        "Delete_file": {
+          "runAfter": {},
+          "metadata": {
+            "%252fNon%2bConformities%252fNon_Conformities_Report.docx": "/Non Conformities/Non_Conformities_Report.docx",
+            "operationMetadataId": "2d2ab44a-e7e7-4713-b935-b3a0d6619b88"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "DeleteFile",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "https://schnauzersystem.sharepoint.com/sites/DevSPSite",
+              "id": "%252fNon%2bConformities%252fNon_Conformities_Report.docx"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Compose_-_pdf_file_name": {
+          "runAfter": {
+            "Convert_Word_Document_to_PDF": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "c5cdfeb7-b16c-42cb-87e9-e835ac1f1a61"
+          },
+          "type": "Compose",
+          "inputs": "@concat('NonConformitiesReport', formatDateTime(utcNow(), 'ddMM_HHmm'), '.PDF')"
+        },
+        "Scope_-_send_notificatoin_to_assigned_manager_2": {
+          "actions": {
+            "Compose_-_Title_email_2": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "6a42fea3-3d02-4c06-841f-94cc50ebf62e"
+              },
+              "type": "Compose",
+              "inputs": "NonConformities Report"
+            },
+            "Compose_-_Paragraph_Email_2": {
+              "runAfter": {
+                "Compose_-_Title_email_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "76210c43-e0b0-42d6-9941-bdaf3ec05653"
+              },
+              "type": "Compose",
+              "inputs": "Hello ! Your PDF Report is attached. \n\nFor more details , click at the button below to open the Discrepancy Management App."
+            },
+            "Compose_-_button_title_2": {
+              "runAfter": {
+                "Compose_-_Paragraph_Email_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e76f0293-7d08-4ab1-b8d3-096155e60669"
+              },
+              "type": "Compose",
+              "inputs": "Open Application"
+            },
+            "Compose_-_URL_2": {
+              "runAfter": {
+                "Compose_-_button_title_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "52cf1569-7b92-4338-b001-f2574f9ea346"
+              },
+              "type": "Compose",
+              "inputs": "https://org250e4bf3.crm4.dynamics.com/main.aspx?appid=868e1665-3a54-f011-877b-6045bdf3faaa&pagetype=entitylist&etn=cr468_dm_nonconformities&viewid=83199687-0f58-469a-ad00-43943849c511&viewType=1039"
+            },
+            "Compose_-_Email_Body_2": {
+              "runAfter": {
+                "Compose_-_URL_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "6a7eef45-a2ec-4890-9ff9-ce040a77f47f"
+              },
+              "type": "Compose",
+              "inputs": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" style=\"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0; color: #4B4B4B;\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>Actionable emails e.g. reset password</title>\n\n<style type=\"text/css\">\nimg {\nmax-width: 100%;\n}\nbody {\n-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6em; color: #4B4B4B;\n}\nbody {\nbackground-color: #f6f6f6;\n}\n@media only screen and (max-width: 640px) {\n  body {\n    padding: 0 !important;\n  }\n  h1, h2, h3, h4 {\n    font-weight: 800 !important; margin: 20px 0 5px !important;\n  }\n  h1 {\n    font-size: 22px !important;\n  }\n  h2 {\n    font-size: 18px !important;\n  }\n  h3 {\n    font-size: 16px !important;\n  }\n  .container {\n    padding: 0 !important; width: 100% !important;\n  }\n  .content {\n    padding: 0 !important;\n  }\n  .content-wrap {\n    padding: 10px !important;\n  }\n  .invoice {\n    width: 100% !important;\n  }\n}\n</style>\n</head>\n\n<body itemscope itemtype=\"http://schema.org/EmailMessage\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; line-height: 1.6em; background-color: #f6f6f6; margin: 0; color: #4B4B4B;\" bgcolor=\"#f6f6f6\">\n\n<table class=\"body-wrap\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; width: 100%; background-color: #f6f6f6; margin: 0; color: #4B4B4B;\" bgcolor=\"#f6f6f6\">\n<tr><td></td>\n<td class=\"container\" width=\"600\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto; color: #4B4B4B;\">\n<div class=\"content\" style=\"font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; max-width: 600px; display: block; margin: 0 auto; padding: 20px; color: #4B4B4B;\">\n<table class=\"main\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-radius: 3px; background-color: #fff; margin: 0; border: 1px solid #e9e9e9; color: #4B4B4B;\" bgcolor=\"#fff\">\n<tr><td class=\"content-wrap\" style=\"padding: 20px; color: #4B4B4B;\">\n<meta itemprop=\"name\" content=\"Confirm Email\" />\n<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">\n<tr><td class=\"content-block\" style=\"padding: 0 0 20px; color: #4B4B4B;\">\n<h4>@{outputs('Compose_-_Title_email_2')} </h4>\n</td></tr>\n<tr><td class=\"content-block\" style=\"padding: 0 0 20px; color: #4B4B4B;\">\n@{outputs('Compose_-_Paragraph_Email_2')}\n</td></tr>\n<tr><td class=\"content-block\" itemprop=\"handler\" itemscope itemtype=\"http://schema.org/HttpActionHandler\" style=\"padding: 0 0 20px; color: #4B4B4B;\">\n<a href=\"@{outputs('Compose_-_URL_2')}\" class=\"btn-primary\" itemprop=\"url\" style=\"color: #FFF; text-decoration: none; line-height: 2em; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 5px; text-transform: capitalize; background-color: #4B4B4B; margin: 0; border-color: #4B4B4B; border-style: solid; border-width: 10px 20px;\">@{outputs('Compose_-_button_title_2')}</a>\n</td></tr>\n<tr><td class=\"content-block\" style=\"padding: 0 0 20px; color: #4B4B4B;\"></td></tr>\n</table>\n</td></tr>\n</table>\n<div class=\"footer\" style=\"width: 100%; clear: both; color: #999; margin: 0; padding: 20px;\">\n<table width=\"100%\">\n<tr><td class=\"aligncenter content-block\" style=\"font-size: 12px; color: #999; text-align: center; padding: 0 0 20px;\">\nThis is an automatically generated email sent via Power Automate. Please do not reply.\n</td></tr>\n</table>\n</div>\n</div>\n</td>\n<td></td>\n</tr>\n</table>\n</body>\n</html>\n"
+            },
+            "Send_an_email_(V2)_2": {
+              "runAfter": {
+                "Get_file_content": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "0c321939-11c3-4f7c-80ed-aaa25ec59619"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_office365",
+                  "operationId": "SendEmailV2",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                },
+                "parameters": {
+                  "emailMessage/To": "juraj@powerux.cz",
+                  "emailMessage/Subject": "PDF Report - NonConformity",
+                  "emailMessage/Body": "<p>@{outputs('Compose_-_Email_Body_2')}</p>",
+                  "emailMessage/Attachments": [
+                    {
+                      "Name": "Report - NonConformity.pdf",
+                      "ContentBytes": "@body('Get_file_content')"
+                    }
+                  ],
+                  "emailMessage/Importance": "Normal"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Get_file_content": {
+              "runAfter": {
+                "Compose_-_Email_Body_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "5993ce9a-2482-43a9-9b4d-a078827f2bd9"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_sharepointonline",
+                  "operationId": "GetFileContent",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                },
+                "parameters": {
+                  "dataset": "https://schnauzersystem.sharepoint.com/sites/DevSPSite",
+                  "id": "@outputs('Create_file_2')?['body/Id']",
+                  "inferContentType": true
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Create_file_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8c62006c-ac92-48f4-a283-384eba971743"
+          },
+          "type": "Scope"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

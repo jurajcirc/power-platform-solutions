@@ -1,0 +1,32 @@
+<appaction uniquename="cr468__SaveNextStage!62588d0b57d042919307d1ae5df91614!cr468_DM_Report_NonComformities_App!cr468_dm_nonconformities!0">
+  <appmoduleid>
+    <uniquename>cr468_DM_Report_NonComformities_App</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Next">
+    <label description="Next" languagecode="1033" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>cr468_dm_nonconformities</logicalname>
+  </contextentity>
+  <contextvalue>cr468_dm_nonconformities</contextvalue>
+  <fonticon>DoubleChevronRight</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>SaveNextStage!62588d0b57d042919307d1ae5df91614</name>
+  <onclickeventjavascriptfunctionname>saveAndMoveNext</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[{"type":5}]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>8e61041e-2357-f011-877b-6045bdf3faaa</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100100015.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

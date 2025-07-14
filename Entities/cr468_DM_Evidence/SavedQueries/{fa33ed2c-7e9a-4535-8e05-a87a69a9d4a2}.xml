@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{fa33ed2c-7e9a-4535-8e05-a87a69a9d4a2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr468_filename" select="1" icon="1" preview="1">
+        <row name="result" id="cr468_dm_evidenceid">
+          <cell name="cr468_filename" width="300" />
+          <cell name="cr468_file" width="100" />
+          <cell name="createdby" width="104" />
+          <cell name="createdon" width="105" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr468_dm_evidence">
+          <attribute name="cr468_dm_evidenceid" />
+          <attribute name="cr468_filename" />
+          <attribute name="createdon" />
+          <order attribute="cr468_filename" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cr468_file" />
+          <attribute name="createdby" />
+          <attribute name="createdon" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active DM_Evidences" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

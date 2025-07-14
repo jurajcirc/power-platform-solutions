@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{fc50a93a-18db-4527-b18f-01b5ea181d51}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{0b9ee265-c04e-45e6-aefd-12ae8c8a2e65}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{97186cc9-70a6-4a9c-946a-21de75bed5b2}">
+                  <labels>
+                    <label description="GENERAL" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b161e640-7093-44b5-a179-c0b9c26bae8a}">
+                        <labels>
+                          <label description="Evidence Comment" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_filename" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr468_filename" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a2ae5142-b3ea-410e-befa-7c4cace8b11b}" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7e5b5116-00d2-4634-ab2c-e92d629236e6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="File" languagecode="1033" />
+                        </labels>
+                        <control id="cr468_file" classid="{0A7FF475-B016-4687-9CE5-042BFDBD6519}" datafieldname="cr468_file" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>
