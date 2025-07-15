@@ -12,6 +12,9 @@ if (Test-Path $zipFile) {
     Remove-Item $zipFile
 }
 
+Write-Host "Pulling latest from GitHub branch '$gitBranch'..."
+git pull --rebase origin $gitBranch
+
 Write-Host "Exporting solution '$solutionName'..."
 pac solution export --path $zipFile --name $solutionName --managed false
 
