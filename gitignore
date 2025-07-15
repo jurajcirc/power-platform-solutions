@@ -1,0 +1,4 @@
+# Ignore exported solution zips
+solution.zip
+# Ignore unpack folder bin artifacts if needed
+*.bak
