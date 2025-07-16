@@ -13,7 +13,7 @@ if (Test-Path $zipFile) {
     Remove-Item $zipFile
 }
 
-# Pull latest from remote to avoid conflicts
+# Pull latest from GitHub
 Write-Host "Pulling latest from GitHub branch '$gitBranch'..."
 git pull --rebase origin $gitBranch
 
@@ -25,24 +25,31 @@ pac solution export --path $zipFile --name $solutionName --managed false
 Write-Host "Unpacking solution to '$unpackFolder'..."
 pac solution unpack --zipfile $zipFile --folder $unpackFolder --packagetype Unmanaged
 
-# Clean up any old unnecessary unpack files if needed
+# Clean up any unnecessary files (optional patterns)
 Get-ChildItem -Recurse $unpackFolder -Include "*.bak","*.tmp" | Remove-Item -Force -ErrorAction SilentlyContinue
 
-# Git add, commit, push
+# Git add & check for changes
 Write-Host "Adding changes to Git..."
 git add .
 
-$timeStamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-$commitMessage = "Update DiscrepancyManagement solution: $timeStamp"
+# Properly detect staged changes
+git diff --cached --quiet
+$hasChanges = ($LASTEXITCODE -eq 1)
 
-Write-Host "Committing changes..."
-git commit -m "$commitMessage"
+if ($hasChanges) {
+    $timeStamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $commitMessage = "Update DiscrepancyManagement solution: $timeStamp"
 
-Write-Host "Pushing to branch '$gitBranch'..."
-git push -u origin $gitBranch
+    Write-Host "Committing changes..."
+    git commit -m "$commitMessage"
 
-# Log this update
-$lastCommit = git rev-parse HEAD
-"[$timeStamp] Updated to commit $lastCommit" | Out-File -Append -Encoding utf8 $logFile
+    Write-Host "Pushing to branch '$gitBranch'..."
+    git push -u origin $gitBranch
 
-Write-Host "Done. Latest commit: $lastCommit"
+    $lastCommit = git rev-parse HEAD
+    "[$timeStamp] Updated to commit $lastCommit" | Out-File -Append -Encoding utf8 $logFile
+    Write-Host "Done. Latest commit: $lastCommit"
+}
+else {
+    Write-Host "No changes to commit. Working directory clean."
+}

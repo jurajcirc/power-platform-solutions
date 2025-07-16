@@ -9,21 +9,21 @@
       <tabs>
         <tab verticallayout="true" id="{f56bee8d-32dd-465a-b8b9-12c8bcc63047}" IsUserDefined="1" name="General">
           <labels>
-            <label description="General" languagecode="1033" />
+            <label description="NonConformity" languagecode="1033" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
                 <section name="Details_Section" id="d09b8b90-fb9d-402b-a76d-303cf4b24d9e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Discrepancy Details" languagecode="1033" />
+                    <label description="Non Conformity Details" languagecode="1033" />
                   </labels>
                   <rows>
                     <row />
                     <row>
                       <cell id="{146b5865-12af-4990-8317-c8a4fdaf5907}" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Discrepancy Title" languagecode="1033" />
+                          <label description="NonConformity Title" languagecode="1033" />
                         </labels>
                         <control id="cr468_title" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr468_title" />
                       </cell>
@@ -141,14 +141,14 @@
               <sections>
                 <section name="Corrective_section_3" id="25ab43a2-b57c-44c4-9331-693188b89106" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Discrepancy Managers are able to close Discrepancies" languagecode="1033" />
+                    <label description="Only Discrepancy Managers are able to close Discrepancies" languagecode="1033" />
                   </labels>
                   <rows>
                     <row />
                     <row>
                       <cell id="{ef335fe6-6858-4bed-a8e9-3ab9decd7aef}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="AssignedManager" languagecode="1033" />
+                          <label description="Assigned Manager" languagecode="1033" />
                         </labels>
                         <control id="cr468_assignedmanager" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr468_assignedmanager" disabled="false" />
                       </cell>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.25062.192" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25062.192" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25063.00192">
+<ImportExportXml version="9.2.25063.192" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25063.192" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25063.00192">
   <SolutionManifest>
     <UniqueName>DiscrepancyManagement</UniqueName>
     <LocalizedNames>
@@ -97,7 +97,6 @@
       <RootComponent type="29" id="{b4a60f1b-fa5c-f011-bec1-6045bdf3faaa}" behavior="0" />
       <RootComponent type="29" id="{d04292cc-3f5b-f011-bec1-6045bdf3faaa}" behavior="0" />
       <RootComponent type="29" id="{f08a29a9-e658-f011-bec1-6045bdf3faaa}" behavior="0" />
-      <RootComponent type="29" id="{f3877f59-405b-f011-bec1-6045bdf3faaa}" behavior="0" />
       <RootComponent type="300" schemaName="cr0a1_canvastemplate002mui_ce6a8" behavior="0" />
       <RootComponent type="300" schemaName="cr468_dmreportnoncomformitiesappdefaultcommandlibrary_e9b93" behavior="0" />
       <RootComponent type="300" schemaName="crda1_reusableuicomponents_69811" behavior="0" />

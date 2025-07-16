@@ -1,4 +1,4 @@
-function showHideTabsByStage(executionContext) {
+window.showHideTabsByStage = function (executionContext) {
     var formContext = executionContext.getFormContext();
 
     function updateVisibility() {
@@ -13,7 +13,6 @@ function showHideTabsByStage(executionContext) {
             tab.setVisible(false);
         });
 
-        // Show specific tab based on stage
         if (stageName === "Discrepancy Info") {
             showTabByName("General");
             console.log("-> Showing only tab: General");
@@ -21,8 +20,10 @@ function showHideTabsByStage(executionContext) {
             showTabByName("Evidence");
             console.log("-> Showing only tab: Evidence");
         } else if (stageName === "Close Discrepancy") {
+            showTabByName("General");
+            showTabByName("Evidence");
             showTabByName("Corrective");
-            console.log("-> Showing only tab: Corrective");
+            console.log("-> Showing tabs: General, Evidence, Corrective");
         }
     }
 
@@ -33,20 +34,12 @@ function showHideTabsByStage(executionContext) {
         }
     }
 
-    // Run once on load
     updateVisibility();
 
-    // Attach to the UI's OnLoad so it runs after subgrid forms close
     formContext.ui.addOnLoad(updateVisibility);
-
-    // Also stay hooked to process changes
     if (formContext.data.process) {
         formContext.data.process.addOnStageSelected(updateVisibility);
         formContext.data.process.addOnStageChange(updateVisibility);
     }
-
-    // And on save
     formContext.data.entity.addOnSave(updateVisibility);
-
-    // ❌ Removed: formContext.data.addOnRefresh(updateVisibility);
-}
+};

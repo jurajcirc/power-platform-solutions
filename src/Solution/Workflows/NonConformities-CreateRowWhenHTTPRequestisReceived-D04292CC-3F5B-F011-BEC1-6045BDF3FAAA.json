@@ -156,6 +156,25 @@
               }
             ]
           }
+        },
+        "Response": {
+          "runAfter": {
+            "Add_a_new_row": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "0e58f1c2-a8c0-402f-b4d9-a0e4e18cfff8"
+          },
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "status": "success",
+              "details": "Row created in Dataverse."
+            }
+          }
         }
       }
     },
