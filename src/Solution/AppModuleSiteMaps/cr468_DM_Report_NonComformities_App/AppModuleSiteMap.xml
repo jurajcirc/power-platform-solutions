@@ -16,7 +16,7 @@
         </Titles>
         <SubArea Id="subarea_47c29957" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr468_dm_nonconformities" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
-            <Title LCID="1033" Title="Discrepancies List" />
+            <Title LCID="1033" Title="NonConformity List" />
           </Titles>
         </SubArea>
         <SubArea Id="subarea_0d96fcf1" ResourceId="SitemapDesigner.NewSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="https://apps.powerapps.com/play/e/2a13bdc7-cdee-e423-8687-1c299335e752/a/133a3959-6f91-4dd8-9b55-06cd2326963c?tenantId=cd1a2f8e-2997-4adc-9e7d-8b3debf4456f&amp;hint=67a83b2d-9133-4ebe-805d-bfb3ec6ce190&amp;sourcetime=1751893566585&amp;source=portal&amp;hidenavbar=true" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
